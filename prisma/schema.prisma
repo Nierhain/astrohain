@@ -12,9 +12,10 @@ datasource db {
 
 model Apod {
   id        String   @id @default(cuid())
-  createdAt DateTime @default(now()) @db.Date @unique
+  createdAt DateTime @db.Date @unique
   updatedAt DateTime @updatedAt
-  imageUrl  String
+  url  String
+  type ApodType
   title     String
   description String
   author    String
@@ -28,4 +29,9 @@ model Astrobin {
   title String
   description String
   author String 
+}
+
+enum ApodType {
+  IMAGE
+  VIDEO
 }
