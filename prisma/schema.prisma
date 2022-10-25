@@ -12,7 +12,7 @@ datasource db {
 
 model Apod {
   id        String   @id @default(cuid())
-  createdAt DateTime @default(now()) @db.date @unique
+  createdAt DateTime @default(now()) @db.Date @unique
   updatedAt DateTime @updatedAt
   imageUrl  String
   title     String

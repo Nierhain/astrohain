@@ -6,7 +6,6 @@ import { createTRPCNext } from "@trpc/next";
 import type { GetInferenceHelpers } from "@trpc/server";
 
 import type { AppRouter } from "../server/trpc/router/_app";
-import { env } from "../env/server.mjs";
 
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return ""; // browser should use relative url
@@ -30,7 +29,7 @@ export const trpc = createTRPCNext<AppRouter>({
       ],
     };
   },
-  ssr: false,
+  ssr: true,
 });
 
 /**
@@ -38,7 +37,3 @@ export const trpc = createTRPCNext<AppRouter>({
  * @example type HelloOutput = AppRouterTypes['example']['hello']['output']
  **/
 export type AppRouterTypes = GetInferenceHelpers<AppRouter>;
-
-export const isAdmin = (key: string) => {
-  return key === env.ADMIN_KEY
-}

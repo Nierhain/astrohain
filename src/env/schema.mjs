@@ -7,8 +7,8 @@ import { z } from "zod";
  */
 export const serverSchema = z.object({
   DATABASE_URL: z.string().url(),
-  ADMIN_KEY: z.string().length(32),
-  NASA_KEY: z.string(),
+  ADMIN_KEY: z.string(),
+  NASA_KEY:z.string(),
   ASTROBIN_KEY: z.string(),
   NODE_ENV: z.enum(["development", "test", "production"]),
 });
