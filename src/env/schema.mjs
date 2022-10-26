@@ -6,12 +6,12 @@ import { z } from 'zod'
  * This way you can ensure the app isn't built with invalid env vars.
  */
 export const serverSchema = z.object({
-    DATABASE_URL: z.string().url(),
-    ADMIN_KEY: z.string().length(32),
-    NASA_KEY: z.string().min(1),
-    ASTROBIN_KEY: z.string().min(1),
-    NODE_ENV: z.enum(['development', 'test', 'production']),
-})
+  DATABASE_URL: z.string().url(),
+  ADMIN_KEY: z.string(),
+  NASA_KEY:z.string(),
+  ASTROBIN_KEY: z.string(),
+  NODE_ENV: z.enum(["development", "test", "production"]),
+});
 
 /**
  * Specify your client-side environment variables schema here.

@@ -14,8 +14,8 @@ model Apod {
   id        String   @id @default(cuid())
   createdAt DateTime @db.Date @unique
   updatedAt DateTime @updatedAt
-  type ApodType 
   url  String
+  type ApodType
   title     String
   description String
   author    String
